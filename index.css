@@ -1,0 +1,582 @@
+html {
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /*плавный переход по старнице*/
+}
+
+:root {
+    --font-family-main: "Lexend", sans-serif;
+    --font-family-second: "Poppins", sans-serif;
+    --font-family-third: "Roboto", sans-serif;
+    --font-family-fourth: "DM Sans", sans-serif;
+    --white-color: #fff;
+    --black-color: #040522;
+    --blue-color: #171fe5;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    max-width: 1600px; /* не шире 1600px */
+    color: var(--black-color);
+}
+
+.third-family {
+    font-family: var(--font-family-third);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+.second-family {
+    font-family: var(--font-family-second);
+    font-weight: 500;
+    font-style: normal; 
+}
+
+.main-family {
+    font-family: var(--font-family-main);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.font4 {
+    font-family: var(--font-family-fourth);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 45em;
+    background-color: #81C2D4;
+    overflow: hidden; /*скрывает все, что "вылезает" за пределы контейнера. */
+}
+.logo {
+    position: absolute;
+    z-index: 1;
+    top: 3.06em; 
+    left: 7.5%;
+    margin: 0;
+    display: flex;
+    align-items: center;   
+}
+.logo>img {
+    width: 2.5em;
+    height: 1.9em;
+}
+.logo>p {
+    font-family: var(--font-family-third);
+    font-size: 1.9em;
+    font-weight: 500;
+    color: var(--blue-color);
+}
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5em;
+    margin-top: 3.37em;
+    font-family: var(--font-family-third);
+    font-weight: 500;
+    font-size: 1.12em;
+    list-style-type: none;
+}
+.header-nav ul li {
+    opacity: 0.7; /*непрозрачность*/
+}
+.header-nav ul li:nth-of-type(1) {
+    opacity: 1;
+}
+.header-nav ul li+li a:hover {
+    cursor: pointer;
+    color: var(--blue-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+/*container-grid*/
+.container-grid {
+    display: grid;
+    grid-template-columns: 517px 681px;;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25em; /* промежутки между элементами */
+}
+.text-header {
+    grid-column: 1/2;
+    font-family: var(--font-family-main);
+    overflow-wrap: break-word;/*CSS-свойство, которое заставляет браузер принудительно переносить длинные слова на новую строку, если они не помещаются в границы блока, предотвращая «вылезание» текста наружу*/
+    overflow: hidden;/*это CSS-свойство, которое обрезает содержимое элемента, если оно не помещается в заданные размеры (ширину или высоту) контейнера. Всё, что выходит за границы блока, становится невидимым, а полосы прокрутки не появляются*/
+}
+.text-header p:nth-of-type(1) {
+    color: #171FE5;
+    font-size: 1.3em;
+}
+h1 {
+    font-weight: 600;
+    font-size: 3.8em;
+    line-height: 120%;
+}
+.text-header p:nth-of-type(2){
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 160%;
+    padding: 10px 0;
+}
+.header-button {
+    display: flex;
+    align-items: center;
+    margin: 1.875em 0 0;
+    padding: 1em 1em 1em 1.87em;
+    font-family: var(--third-family);
+    font-size: 1.125em;
+    color: white;
+    background-color: #FF843F;
+    border-radius: 10em;
+    border: none;
+    cursor: pointer;
+}
+.header-button div {
+    display: flex;
+    justify-content: center;
+    width: 1.62em;
+    height: 1.62em;
+    margin: 0; /*Обнулить отступы, что бы значек был по середине*/
+    padding: 0;
+    margin-left: 1.5em;
+    background-color: rgba(255, 255, 255, 0.3);/* Вместо opacity используем полупрозрачный фон */
+    border-radius: 50%;
+}
+.header-button p:nth-of-type(1) {
+    color: white;
+    line-height: 1;
+}
+
+.girl {
+    position: relative;
+    z-index: 1;
+}
+.girl>img {
+    grid-column: 2/3;
+    width: 100%;
+    height: auto;
+    margin-top: 3.4em;
+    filter: drop-shadow(30px 1px 60px rgb(12, 111, 136, 0.9));
+    display: block; /*чтобы убрать лишние отступы снизу*/  
+}
+.elipse {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+.ellipse1 {
+    bottom: 13.62em; 
+    left: -1.8em;
+    width: 1.25em;
+    height: 1.25em;
+}
+.ellipse2 {
+    bottom: 7.1em;
+    right: 0.6em;
+    width: 1.25em;
+    height: 1.25em;
+}
+.ellipse3 {
+    top: 4.3em;
+    right: 13.8em;
+    width: 1em;
+    height: 1em;
+}
+.ellipse4 {
+    top: 7.75em;
+    left: 5.3em;
+    width: 0.87em;
+    height: 0.87em;
+}
+.ellipse5 {
+    bottom: 18.5em;
+    right: 14.18em;
+    width: 0.62em;
+    height: 0.62em;
+}
+.ellipse6 {
+    top: 16.25em;
+    right: 1.3em;
+    width: 0.5em;
+    height: 0.5em;
+}
+.ellipse7 {
+    top: 6.12em;
+    left: 14em;
+    width: 0.37em;
+    height: 0.37em;
+}
+.message {
+    position: absolute;
+    z-index: 2;
+    top: 5em;
+    right: 1.06em;
+    font-family: var(--font-family-third);
+    font-size: 1em;
+    color: var(--white-color);
+    border-radius: 12.5em;
+    padding: 0.9em 1.8em;
+    width: 10.12em;
+    height: 5.25em;
+    background: #ffa166;
+}
+.message>p:nth-of-type(2) {
+    font-size: 1.87em;
+}
+.triangle {
+    position: absolute;
+    z-index: 2;
+    top: 9.5em;
+    right: 6em;
+    width: 0;
+    height: 0;
+    border-left: 2.5em solid transparent;  /* Ширина основания / 2 */
+    border-right: 2.5em solid transparent; /* Ширина основания / 2 */
+    border-bottom: 1.3em solid #ffa166;  /* Высота и цвет */ 
+    transform: rotate(-30deg);
+}
+
+/*Тело страницы*/
+.img-three {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 0;
+    perspective: 1640px;
+    margin: 4.37em 0 0;
+}
+/* обёртка — фиксируем размер и обрезаем всё, что выходит */
+.img-wrap {
+    position: relative;
+    width: 29.22em;
+    height: auto;
+    overflow: hidden; /* очень важно: оверлей не выйдет за пределы */
+    display: inline-block; /* чтобы трансформации визуально совпадали с картинкой */
+}
+/* само изображение внутри обёртки */
+.img-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center;
+    box-shadow: 0 10px 40px -5px rgba(0,0,0,0.2);/* тень оставляем на картинке */
+}
+.img-wrap img:hover {
+    cursor: pointer;
+}
+/* Псевдо-оверлей, который покрывает всю обёртку */
+.with-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(36, 26, 3, 0.451); /* полупрозрачный цвет, можно использовать backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(2px); /* для Safari */
+    pointer-events: none; /* оверлей не мешает кликам */
+}
+/* Переносим трансформации на обёртки (чтобы оверлей тоже двигался вместе) */
+.img-center{
+    transform: rotateY(0deg) translateX(0%) scale(1); /*scale() Масштабирует квадрат на 1% от его исходного размера (немного уменьшен по сравнению с центральным).Помогает создать иллюзию глубины — боковые элементы чуть меньше.*/
+    z-index: 3;
+}
+.img-left{
+    transform: rotateY(0deg) translateX(10%) scale(0.80);
+    z-index: 1;
+}
+.img-right{
+    transform: rotateY(0deg) translateX(-10%) scale(0.80);
+    z-index: 1;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: .6em;
+    margin-top: 1.25em;
+}
+.dot {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #F1F1F1;
+}
+.dot:nth-of-type(2)  {
+    background-color: #ffa166;
+}
+
+/*New Arrival*/
+h2 {
+    font-family: var(--font-family-main);
+    font-weight: 600;
+    font-size: 2.75em;
+    line-height: 120%;
+    margin: 120px 0 70px 190px;
+}
+
+.new-arrival-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 22.62em);
+    grid-template-rows: repeat(2, 21.18em);
+    gap: 1.87em;
+    justify-content: center;
+    
+}
+.new-arrival-grid>img {
+    width: 100%;
+    height: auto;
+}
+.girl4 {
+    grid-column: 2/3;
+    grid-row: 2;
+}
+.girl5 {
+    grid-column: 3/4;
+    grid-row: 2;
+}
+
+/*Top Selling Products*/
+/* Общий контейнер */
+.top-selling-products p {
+    margin: 0 15.156em 4.37em 15.156em;
+}
+.top-girl-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1640px;/* помогает эффект глубины */
+    gap: 0;
+}
+.top-girl-img img {
+    width: 23.93em;
+    height: auto;
+    position: relative;
+    transition: transform 0.45s cubic-bezier(.28,.65,.54,.98), z-index 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 40px -5px rgba(0,0,0, 0.2);
+    background-clip: padding-box;
+}
+.top-girl1 { 
+    transform: rotateY(20deg) translateX(93%) scale(0.95); /*scale(0.92) Масштабирует квадрат на 98% от его исходного размера (немного уменьшен по сравнению с центральным).Помогает создать иллюзию глубины — боковые элементы чуть меньше.*/
+    z-index: 1; 
+} 
+.top-girl2 {
+    transform: rotateY(15deg) translateX(47%) scale(0.96); 
+    z-index: 2;
+    height: 439px;  
+}
+.top-girl3 { 
+    transform: rotateY(0deg) translateX(7%) scale(1); 
+    z-index: 3;
+}
+.top-girl4 { 
+    transform: rotateY(-15deg) translateX(-40%) scale(0.98); 
+    z-index: 2;
+    height: 439px; 
+}
+.top-girl5 { 
+    transform: rotateY(-20deg) translateX(-85%) scale(0.97); 
+    z-index: 1; 
+}
+
+/*our-speciality*/
+.top-selling-products>h2,
+.our-speciality>h2 {
+    margin: 120px 0 20px 0;
+    text-align: center;
+}
+.top-selling-products p,
+.our-speciality p {
+    text-align: center;
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    opacity: 0.7;
+}
+.speciality-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 1.87em;
+    margin: 4.37em 14.8em 0;
+}
+.speciality {
+    text-align: center;
+    border-radius: .6em;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+.cube {
+    margin: 1.25em auto 1.25em;
+    width: 3.12em;
+    height: 3.12em;
+    padding: 0.8em;
+    background-color: rgba(23, 31, 229, 0.1);/* Вместо opacity используем полупрозрачный фон */
+    border-radius: 10%;
+}
+.speciality>h1 {
+    font-family: var(--font-family-main);
+    font-size: 1.37em;
+    line-height: 140%;
+}
+.speciality>p {
+    padding: 0.6em 0 1.8em;
+}
+
+/*Top brand*/
+.top-brand-icon {
+    background-color: #F8FCFD;
+    padding: 4.62em 0;
+    display: flex;
+    justify-content: center;
+    gap: 8.56em;
+}
+
+/*Blog*/
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 22.62em);
+    grid-template-rows: 31.37em;
+    justify-content: center;
+    gap: 0 1.87em;
+    margin: 0 0 7.5em 0;
+}
+.blog-article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    font-family: var(--font-family-main);
+    font-size: 1em;
+    line-height: 160%;
+    border-radius: 0 0 .6em .6em;
+    box-shadow: 0 4px 8px 0 rgba(4, 5, 34, 0.05);
+    background: var(--white-color);
+}
+.blog-article img {
+    grid-column: 1/3;
+    width: 22.62em;
+    height: 17.93em;
+}
+.blog-article>h1 {
+    grid-column: 1/3;
+    font-size: 1.37em;
+    line-height: 140%;
+    margin: 1.5em 0 .6em 1.5em;
+}
+.blog-article p:nth-of-type(1) {
+    grid-column: 1/3;
+    font-weight: 400;
+    opacity: 0.7;
+    margin: 0 1.8em 1.25em 1.5em;
+}
+.blog-article p:nth-of-type(2) {
+    grid-column: 1/2;
+    font-weight: 500;
+    color: #e56117;
+    text-transform: uppercase;
+    margin: 0 0 1.5em 1.5em;
+}
+.blog-article p:nth-of-type(3) {
+    grid-column: 2/3;
+    font-weight: 500;
+    text-align: right;
+    margin: 0 1.5em 1.5em 0;
+}
+.blog-article:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(4, 5, 34, 0.2);
+}
+
+/*Подвал страницы*/
+footer {
+    display: grid;
+    grid-template-columns: 16.25em repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 0;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-family: var(--font-family-second);
+    font-size: 1em;
+    padding: 4.37em 14.18em;
+}
+.logo-footer {
+    display: flex;
+    align-items: center;
+    padding-right: 0.18em;
+}
+.logo-footer p {
+    font-family: var(--font-family-third);
+    font-weight: 500;
+    font-size: 1.9em;
+    color: var(--white-color);
+}
+.logo-icon>p {
+    font-family: var(--font-family-fourth);
+    line-height: 150%;
+    opacity: 0.7;
+    margin: 1.56em 0;
+}
+.icon {
+    display: flex;
+    gap: 0.9em;
+}
+.circle {
+    display: flex;
+    justify-content: center;
+    width: 1.87em;
+    height: 1.87em;
+    padding: 0.56em;
+    background-color: rgba(255, 255, 255, 0.1);/* Вместо opacity используем полупрозрачный фон */
+    border-radius: 100%;
+}
+footer nav ul li {
+    list-style-type: none;
+}
+.quick-link, .support, .contact-us {
+    font-weight: 600;
+    font-size: 1.37em;
+    margin-bottom: 0.6em;
+}
+.menu-1 li, .menu-2 li, .contact li {
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 106%;
+    text-transform: capitalize; /*CSS-свойство, которое делает первую букву каждого слова заглавной (прописной)*/
+    padding: 0.9em 0;
+    opacity: 0.7; /*непрозрачность*/
+}
+.contact li {
+    font-weight: 400;
+}
+.menu-1>li a:hover, /*дочерний селектор*/
+.menu-2>li a:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: #81C2D4;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--white-color);
+}
